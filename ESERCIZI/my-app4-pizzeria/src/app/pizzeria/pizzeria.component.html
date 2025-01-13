@@ -1,0 +1,17 @@
+<h1>Benvenuti della Pizzeria Migliore di ITS</h1>
+
+<!-- 
+* 1. Componente `app-lista-pizze`: 
+   - Riceve l'array delle pizze dal parent (`pizzeria`) tramite la proprietà `[listaPizze]` -> @Input.
+   - Comunica al parent quale pizza è stata cliccata emettendo un evento tramite `(selectPizza)` -> @Output.
+   - $event -> contiene tutto ciò che vado ad EMETTERE
+-->
+<app-lista-pizze [listaPizze]="pizze" (selectPizza)="onSelectPizza($event)"></app-lista-pizze>
+
+
+<!-- 
+*2. Componente `app-pizza`: 
+   - Riceve i dati della pizza selezionata (cliccata) dal parent tramite `[pizzaScelta]`.
+   - Mostra i dettagli della pizza selezionata all'interno del component `pizza`, c'è una comunicazione tra @Input e @Output
+-->
+<app-pizza [pizzaScelta]="pizzaScelta"></app-pizza>

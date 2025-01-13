@@ -1,0 +1,50 @@
+<!-- bottone che permette di aprire una modale con un form di compilazione per aggiungere una nuova task
+ all'array `tasksUtente` -->
+<button type="button" class="p-3 btn btn-outline-danger mt-5" data-bs-toggle="modal" data-bs-target="#infoModal">
+    aggiungi task a {{userScelto.nome}}
+</button>
+
+
+<!-- modale che si apre che permette di aggiungere una nuova task a quelle dell'utente -->
+<div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="infoModalLabel">Aggiungi task a {{userScelto.nome}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form (submit)="onSubmitTask()">
+
+                    <p>
+                        <label for="titolo">Titolo Task</label>
+                        <input type="text" id="titolo" class="form-control" name="titolo" [(ngModel)]="titolo">
+                    </p>
+
+                    <p>
+                        <label for="descrizione">Descrizione Task</label>
+                        <textarea name="descrizione" id="descrizione" class="form-control" name="descrizione"
+                            [(ngModel)]="descrizione"></textarea>
+                    </p>
+
+                    <p>
+                        <label for="dataScadenza">Data Scadenza</label>
+                        <input type="date" id="dataScadenza" class="form-control" name="dataScadenza"
+                            [(ngModel)]="dueDate">
+                    </p>
+
+                    <!-- aggiungiamo evento al bottone al click evoca onSubmitForm() -->
+                    <button type="submit" class="btn btn-success">Aggiungi task</button>
+
+
+                    <!-- evocato in caso non venisse inserito le info nei form -->
+                    <div class="text-danger">{{alert}}</div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

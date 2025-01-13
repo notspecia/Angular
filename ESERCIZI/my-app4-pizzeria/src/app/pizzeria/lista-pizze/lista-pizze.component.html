@@ -1,0 +1,11 @@
+<!--* Questo template appartiene al componente FIGLIO (`ListaPizzeComponent`). -->
+<!--* I dati qui mostrati (nome, disponibilita, prezzo, ingredienti[]) vengono forniti dal componente PADRE tramite @Input. -->
+
+<ul>
+    @for(pizza of listaPizze; track $index){
+    <li>
+        {{pizza.nome}} || {{pizza.disponibilita}} || {{pizza.prezzo.toFixed(2)}} || {{pizza.ingredienti.join(", ")}}
+        <button (click)="onSelectedPizza(pizza)">invia pizza</button>
+    </li>
+    }
+</ul>

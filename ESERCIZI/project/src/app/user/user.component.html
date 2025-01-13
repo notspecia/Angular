@@ -1,0 +1,9 @@
+<li class="mb-5 d-flex flex-column align-items-center justify-content-between">
+
+    <span>{{nome}} {{cognome}}</span>
+    <img src="{{avatar}}" alt="user photo">
+
+    <!-- al click mi emette l'user di QUEL'UTENTE -->
+    <button (click)="onSelectUser(user)" class="btn btn-primary">Task di {{nome}}</button>
+
+</li>

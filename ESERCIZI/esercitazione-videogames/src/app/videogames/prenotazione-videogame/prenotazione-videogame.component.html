@@ -1,0 +1,67 @@
+<!-- modale che si apre che permette di prenotare il videogioco passato in @Input da videogame e cambiare il suo stato! -->
+<div class="modal fade" id="prenotaVideogioco" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="infoModalLabel">Compila il form con i tuoi dati!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {{videogame.titolo}}
+                <!--* STEP 01. permettere ad angular di capire come trattare questo form
+                usero una local reference #form = "ngModel" che è uno special identifier
+                dopodichè passo al metodo onSubmit() IL MIO FORM INTERO!  -->
+                <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+
+                    <div>
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" class="form-control" name="nome" ngModel required>
+                    </div>
+
+                    <div>
+                        <label for="cognome">Cognome</label>
+                        <input type="text" id="cognome" class="form-control" name="cognome" ngModel required>
+                    </div>
+
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" id="email" ngModel #email="ngModel"
+                            required>
+                    </div>
+
+                    <div>
+                        <label for="tel">Telefono</label>
+                        <input type="tel" class="form-control" name="tel" id="tel" ngModel pattern="[0-9]{10}" required>
+                    </div>
+
+                    <div>
+                        <label for="indirizzo">Indirizzo di spedizione</label>
+                        <input type="text" class="form-control" name="indirizzo" id="indirizzo" ngModel required>
+                    </div>
+
+
+                    <!-- sumbit del form passando l'oggetto form generato dal ngModel, mettiamo if statement sul form
+                     se non è ancora valido con i campi corretti, disabilitiamo il click del bottone per prenotare -->
+                    @if (form.form.valid) {
+                    <button type="submit" class="btn btn-success mt-5" data-bs-dismiss="modal">Prenota
+                        {{videogame.titolo}}</button>
+                    } @else {
+                    <button type="submit" class="btn btn-success mt-5" data-bs-dismiss="modal" disabled>Prenota
+                        {{videogame.titolo}}</button>
+                    }
+
+                </form>
+
+                <!-- ATTENZIONE: data la local reference ho a disposizione il mio oggetto con tutte le sue proprietà!
+                prima di essere rendirizzato usare anche il touched se il form è stato modificato -->
+                @if (form.form.invalid && form.form.touched ) {
+                <p class="text-decoration-underline text-danger">Valori INVALIDI!</p>
+                }
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Chiudi</button>
+            </div>
+        </div>
+    </div>
+</div>

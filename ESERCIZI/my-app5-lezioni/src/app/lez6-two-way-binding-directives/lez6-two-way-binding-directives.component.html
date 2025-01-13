@@ -1,0 +1,48 @@
+<!-- mettiamo in piedi il two-way-data-binding tramite [(ngModel)] che ci permette di fondere 
+il meccanismo della property binding al meccanismo dell'event binding, CREO UN LEGAME CON LA PROPRIETA CHE VOGLIO GESTIRE
+* [(ngModel)] = "proprietà che voglio gestire" 
+
+IMPORTARE SEMPRE I FORMS MOUDLE!! CHE è una collezzione di directives utili alla gestione dei form! 
+
+ogni volta che inserisco del testo nel input andrà a mostrare anche sulla view aggiornando la proprietà in tempo reale 
+
+utilizzo dei pipe | -->
+
+<div class="box">
+    <h2>Two way data binding</h2>
+
+    <form action="">
+
+        <p>
+            <label for="titolo">Titolo</label>
+            <input type="text" id="titolo" name="titolo" [(ngModel)]="titolo">
+        </p>
+        <!-- utilizzo dei pipe per modificare la UI dell'input inserito -->
+        <span>{{titolo | uppercase}}</span>
+
+        <p>
+            <label for="sommario">Sommario</label>
+            <textarea name="sommario" id="sommario" [(ngModel)]="sommario"></textarea>
+        </p>
+        <span>{{sommario}}</span>
+
+        <p>
+            <label for="dataConsegna">Data consegna</label>
+            <input type="date" id="data" name="data" [(ngModel)]="dataConsegna">
+        </p>
+        <span>{{dataConsegna | date: "dd/MM/YYYY"}}</span>
+
+        <p>
+            <label for="prezzo">Prezzo</label>
+            <input type="number" id="prezzo" name="prezzo" [(ngModel)]="prezzo">
+        </p>
+        <span>Costo totale: {{prezzo | currency: "USD"}}</span>
+
+        <!-- aggiungiamo evento al bottone al click evoca onSubmitForm() -->
+        <button type="submit" (click)="onSubmitForm()">Registra</button>
+
+
+        <!-- evocato in caso non venisse inserito le info nei form -->
+        <div>{{alert}}</div>
+    </form>
+</div>

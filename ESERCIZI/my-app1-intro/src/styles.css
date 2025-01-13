@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files 
+regole importanti:
+
+01. SE DEVO USARE DEI PEZZI DI STILE SU TANTI COMPONENTI, LO DEFINIAMO A LIVELLO GLOBALE USANDOLO PER TUTTI 
+02. LO STYLE DI QUEL COMPONENT -> SOVRASCRIVE QUELLO GLOBALE*/
+h3 {
+    color: blueviolet;
+}
+
+.box {
+    width: 600px;
+    height: auto;
+    border: 2px solid black;
+}

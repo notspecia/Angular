@@ -1,0 +1,10 @@
+<li class="mb-3">
+
+    <strong>{{task.title}}</strong>:
+    <em>{{task.summary}}</em>,
+    <span class="text-primary">scadenza: {{task.dueDate}}</span>
+
+    <!-- bottone che al suo click SEGNA IL COMPLETAMENTO DELLA TASK (eliminata) al genitore `tasks.component` -->
+    <button class="btn btn-success" (click)="onComplete()">Completata</button>
+
+</li>

@@ -1,0 +1,13 @@
+<h2>Intro</h2>
+
+<div>
+    <button (click)="onSelectRespo()">
+        <!-- ora bisogna scrivere cosi per accedere alle proprietà perche ormai il selectedRespo è diventata UNA FUNZIONE! -->
+        <!--* STO ANDANDO A SEGNALARE AD ANGULAR CHE QUESTE PROPRIETA CAMBIANO  -->
+        <span>
+            {{selectedRespo().nome}}
+            {{selectedRespo().cognome}}
+            <img src="{{imagePath()}}" alt="">
+        </span>
+    </button>
+</div>

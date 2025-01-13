@@ -1,0 +1,11 @@
+<p>utente works!</p>
+
+<div>
+
+    <h2>ciao {{selectedUtente}}!</h2>
+    <!-- event listener diretto in HTML e invochiamo un metodo della classe passando un argomento (nome) -->
+    <button (click)="onSelectUtente(selectedUtente.nome)">
+        <span>{{selectedUtente.nome}} {{selectedUtente.cognome}}</span>
+        <img src="{{selectedUtente.img}}" alt="immagine dell'utente scelto">
+    </button>
+</div>

@@ -1,0 +1,57 @@
+<!-- andiamo ad usare le proprietà della classe del component Utenti -->
+<h2>{{titolo}}</h2>
+<h3>info utente Admin</h3>
+<ul>
+    <li>{{nomeAdmin}}</li>
+    <li>{{cognome}}</li>
+    <li>{{eta}}</li>
+</ul>
+
+<!-- proviamo ad inserire l'immagine sia -> con la string interpolation // con il data binding
+ il 2 modo è + pulito! -->
+<div class="imgBox">
+    <img src="{{imgAdmin}}" alt="immagine admin">
+    <img [src]="imgAdmin" alt="immagine admin">
+</div>
+
+
+<!-- lista degli utenti preso dalla classe del component Utenti -->
+<h2 style="margin-top: 100px;">Utenti piattaforma</h2>
+
+<h4>utente {{utenti[0].id}}</h4>
+<ul>
+    <li>{{utenti[0].nome}}</li>
+    <li>{{utenti[0].cognome}}</li>
+    <li>{{utenti[0].eta}}</li>
+    <img src="{{utenti[0].img}}" alt="immagine gabriele">
+</ul>
+
+<h4>utente {{utenti[1].id}}</h4>
+<ul>
+    <li>{{utenti[1].nome}}</li>
+    <li>{{utenti[1].cognome}}</li>
+    <li>{{utenti[1].eta}}</li>
+    <img src="{{utenti[1].img}}" alt="immagine eva">
+</ul>
+
+
+<h4>utente {{utenti[2].id}}</h4>
+<ul>
+    <li>{{utenti[2].nome}}</li>
+    <li>{{utenti[2].cognome}}</li>
+    <li>{{utenti[2].eta}}</li>
+    <img src="{{utenti[2].img}}" alt="paolo eva">
+</ul>
+
+<h4>utente {{utenti[3].id}}</h4>
+<ul>
+    <li>{{utenti[3].nome}}</li>
+    <li>{{utenti[3].cognome}}</li>
+    <li>{{utenti[3].eta}}</li>
+    <img src="{{utenti[3].img}}" alt="giorgia eva">
+</ul>
+
+
+<h1>l'utente del mese è scelto a caso! ed è:</h1>
+<p>{{utenteDelMese.nome}} {{utenteDelMese.cognome}}</p>
+<img src="{{utenteDelMese.img}}" alt="">

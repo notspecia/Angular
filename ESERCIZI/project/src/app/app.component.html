@@ -1,0 +1,40 @@
+<!--! inserriamo tutti i vari component in ordine per formare una SPA (single page application) -->
+
+<app-navbar></app-navbar>
+
+<h1 class="mb-5">Primo progetto</h1>
+
+<!-- 
+rendirizziamo la LISTA degli utenti per ogni utente tramite un @for, passeremo al component figlio `app-user` tutte le varie:
+
+- [props]  nome, cognome, avatar  +  oggetto completo dell'utente da utilizzare successivamente
+- (selectUser)  riceve dal figlio tramite @Output l'evento del click di QUEL determinato UTENTE per poi lavorarci su 
+-->
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-4">
+            @for (user of users; track $index) {
+            <ul>
+                <app-user [user]="user" [nome]="user.nome" [cognome]="user.cognome" [avatar]="user.avatar"
+                    (selectUser)="onSelectUser($event)">
+                </app-user>
+            </ul>
+            }
+        </div>
+
+
+        <!-- necessario @if per passare l'utente selezionato al componente `app-tasks`, altrimenti darebbe problemi di
+        reindirizzamento istantaneo anche se non viene cliccato nessun utente, passiamo a questo ultimo componente citato
+        tramite [prop] l'oggetto di quell'utente scelto! -->
+        <div class="col-8">
+            @if (userScelto) {
+            <app-tasks [userScelto]="userScelto"></app-tasks>
+            } @else {
+            <h2>seleziona un UTENTE per vedere le tasks!</h2>
+            }
+        </div>
+    </div>
+
+</div>

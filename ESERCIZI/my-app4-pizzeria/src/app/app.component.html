@@ -1,0 +1,15 @@
+<!--
+! esercizio  
+* PADRE
+crea un component PIZZERIA: all'interno di questa pizzeria devo vedere, LISTA PIZZE + PIZZA:
+ - una lista di pizze, le pizze le prendo dal genitore ossia PIZZERIA
+ -  al click su una delle pizza nella lista, devo passare in @Input la pizza in questione al componente PIZZA
+
+* FIGLI
+- component LISTA PIZZE: contiene l'elenco di pizze singoole, al click di una pizza nella lista, mostra le informazioni di quella pizza
+- crea un component PIZZA, questo componente riceve in  @Input la pizza che viene cliccata in LISTA PIZZE, (creando una comunicazione completa!)
+* percorso da attuare ->    @Output lista-pizze TO pizzeria  //  @Input pizza FROM pizzeria    -->
+
+<app-pizzeria></app-pizzeria>
+
+<router-outlet />

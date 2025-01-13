@@ -1,0 +1,14 @@
+<div class="listaVideogames">
+    @for (videogame of getVideogames; track $index) {
+    <app-videogame [videogame]="videogame" (selectVideogame)="onVideogameSelected($event)"></app-videogame>
+    }
+</div>
+
+
+
+<!-- inserire qui la possibilità di visualizzare la modale al click del bottone prenota dentro `videogame.component`
+ passiamo come props il videogioco selezionato, e in Output event emitter che mi comunica che la prenotazione è avvenuta -->
+@if (selecetedVideogame) {
+<app-prenotazione-videogame [videogame]="selecetedVideogame" (videogameBooked)="onVideogameBooked()">
+</app-prenotazione-videogame>
+}

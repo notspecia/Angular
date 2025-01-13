@@ -1,0 +1,14 @@
+<h2>tasks di {{userScelto.nome}} {{userScelto.cognome}} </h2>
+
+
+<!-- prendiamo le task dell'utente selezionato (elaborato tramite .filter)
+andiamo a rendirizzare ogni task all'interno di `task.component` -->
+<ul>
+    @for (task of tasksUtente; track $index) {
+    <app-task [task]="task" (taskCompleted)="onComplete($event)"></app-task>
+    }
+</ul>
+
+
+<!-- componente creato per permettere all'utente di creare delle nuove TASKS da aggiungere al DB -->
+<app-new-task [tasksUtente]="tasksUtente" [userScelto]="userScelto"></app-new-task>

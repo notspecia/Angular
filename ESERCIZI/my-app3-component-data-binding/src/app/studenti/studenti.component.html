@@ -1,0 +1,45 @@
+<!-- Controlla che i valori siano visualizzati nel componente padre -->
+<p>TEST DI PROVA SE ARRIVANO I DATI DAL GENITORE: {{id}} {{nome}} {{cognome}}</p>
+
+<h2>studenti del corso</h2>
+
+<!--
+    * Gli elementi <app-studente> rappresentano i componenti figli (studente.component).
+    * Ogni componente figlio riceve dati dal padre (studenti.component) tramite @Input.
+    * Le informazioni originate nel PADRE vengono VISUALIZZATE o GESTITE nel FIGLIO.
+-->
+
+
+<!-- Passaggio di dati statici al componente figlio (senza uso di iterazione) -->
+<!-- id, nome, cognome e immagine sono CUSTOM PROPERTIES definite nel figlio -->
+
+<!-- Evento emesso dal figlio (STUDENTE) al padre (STUDENTI) -->
+<ul>
+
+    <li>
+        <app-studente [id]="id" [nome]="nome" [cognome]="cognome" [immagine]="immagine"
+            (selectStud)="onSelectStud($event)"> </app-studente>
+    </li>
+    <li>
+        <app-studente [id]="id2" [nome]="nome2" [cognome]="cognome2" [immagine]="immagine2"
+            (selectStud)="onSelectStud($event)"> </app-studente>
+    </li>
+
+    <!-- Iterazione su un array di studenti preso da DUMMY_STUDS.ts -->
+    <li>
+        <app-studente [id]="studenti[0].id" [nome]="studenti[0].nome" [cognome]="studenti[0].cognome"
+            [immagine]="studenti[0].immagine" (selectStud)="onSelectStud($event)"> </app-studente>
+    </li>
+    <li>
+        <app-studente [id]="studenti[1].id" [nome]="studenti[1].nome" [cognome]="studenti[1].cognome"
+            [immagine]="studenti[1].immagine" (selectStud)="onSelectStud($event)">
+        </app-studente>
+    </li>
+</ul>
+
+
+<!-- Saluti visualizzati dinamicamente dal padre (STUDENTI) quando il figlio (STUDENTE) invia un evento -->
+<div>
+    <h4>Saluti da parte dello studente</h4>
+    <h5>{{saluto}}</h5>
+</div>

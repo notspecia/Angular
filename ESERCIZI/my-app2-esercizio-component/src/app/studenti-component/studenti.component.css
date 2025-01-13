@@ -1,0 +1,4 @@
+/* sovrascriviamo il colore del box di questo component */
+.box {
+    background-color: green;
+}

@@ -1,0 +1,6 @@
+<div class="d-flex justify-content-start align-items-center flex-wrap gap-5 p-5">
+    @for (ricetta of allRicette; track $index) {
+    <app-ricetta [ricetta]="ricetta"></app-ricetta>
+    }
+</div>
+<app-new-ricetta></app-new-ricetta>

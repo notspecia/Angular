@@ -1,0 +1,7 @@
+<h2>hai scelto il corso di {{respoScelto.nome}}</h2>
+@if (respoScelto.corsi.length >= 4) {
+<p style="color: red;">purtroppo il professore ha troppi corsi! non potrà sostenere la lezione
+    (ha {{respoScelto.corsi.length}} corsi)</p>
+} @else {
+<p style="color: green;">il professore potrà sostenere la lezione!(ha {{respoScelto.corsi.length}} corsi)</p>
+}

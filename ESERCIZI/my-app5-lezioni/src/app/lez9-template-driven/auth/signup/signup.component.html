@@ -1,0 +1,52 @@
+<!-- fondamentale aggiungere la reference da collegare ad angular: #formReg="ngForm"
+ PASSO COME PARAMETRO LA MIA LOCAL REFERENCE #formReg che contiene il mio form!  -->
+<form #formReg="ngForm" style="width: 50%; margin: 100px auto 0;" (ngSubmit)="onSubmit(formReg)">
+
+    <h2 style="text-align: center;">Registrati</h2>
+
+    <!--*** I CAMPI INPUT SE LI VOGLIO CONTROLLARE CON ANGULAR DEVONO ESSERE MARCATI TRAMITE "ngModel"! ***
+    possiamo anche aggiungere delle local reference negli input #nome="ngModel" #cognome="ngModel" SONO UTILIZZABILI COME REFERENZE! -->
+    <div>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" #nome="ngModel" ngModel required>
+    </div>
+
+    <div>
+        <label for="cognome">Cognome</label>
+        <input type="text" id="cognome" name="cognome" #cognome="ngModel" ngModel required>
+    </div>
+
+    <div>
+        <label for="dataNascita">Data di Nascita</label>
+        <input type="date" id="dataNascita" name="dataNascita" #dataNacita="ngModel" ngModel required>
+    </div>
+
+    <!-- questo campo PASSWORD avrà un suo validator proprio: https://v17.angular.io/guide/form-validation#adding-custom-validators-to-template-driven-forms-->
+    <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" minlength="6" maxlength="20" #password="ngModel" ngModel
+            required>
+    </div>
+
+    <button type="submit">Registrati</button>
+
+    <!-- messaggio da mostrare se il form è invalido durante la sua scrittura -->
+    @if (!formReg.valid && formReg.form.touched) {
+    <p style="color: red;">Campi input invalidi! inserisci tutto correttamente</p>
+    }
+
+    <!-- usiamo le localrefernce degli input ngModel per mostrare all'utente precisamente gli errori-->
+    @if (nome.invalid && nome.touched) {
+    <p>Nome non valido!</p>
+    }
+    @if (cognome.invalid && cognome.touched) {
+    <p>Cognome non valido!</p>
+    }
+    @if (dataNacita.invalid && dataNacita.touched) {
+    <p>Data di nascita non valida!</p>
+    }
+    @if (password.invalid && password.touched) {
+    <p>Password non valida!</p>
+    }
+
+</form>

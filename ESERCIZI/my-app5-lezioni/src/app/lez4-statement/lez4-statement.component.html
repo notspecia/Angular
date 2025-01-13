@@ -1,0 +1,77 @@
+<hr>
+<h1>For & if </h1>
+
+<!--! Versione moderna -->
+<h2>versione moderna</h2>
+
+<!--* @for() @if() sono delle direttive built-in directives
+
+voglio stampare la lista degli studenti tramite un ciclo for qui dentro all'HTML
+è OBBLIGATORIO IL-> track $index: serve a tracciare gli elementi -->
+<h3>Lista studenti</h3>
+<ul>
+    @for (studente of listaStudenti; track $index) {
+    <li>id: {{$index}}, dello studente: {{studente}}</li>
+    }
+</ul>
+
+
+<!-- si puo usare anche come track al posto dell' $index, magari una proprietà dell'oggetto DOCENTI che stiamo ciclando
+ se il docente ha true nella proprietà "disponibilita", allora verrà mostrato nell'HTML -->
+<h3>Lista Docenti disponibili</h3>
+<ul>
+    @for (docente of listaDocenti; track docente.id) {
+
+    @if (docente.disponibilita) {
+    <li style="color: green;"> il docente {{docente.nome}} è disponibile per la lezione!</li>
+    } @else {
+    <li style="color: red;">il docente {{docente.nome}} non è disponibile per la lezione</li>
+    }
+
+    }
+</ul>
+
+
+<!-- materie usando sia il ciclo for che if -->
+<h3>Lista materie</h3>
+<ul>
+    @for (materia of listaMaterie; track $index) {
+    <li>{{materia}}</li>
+    }
+</ul>
+
+@if (listaMaterie.length > 0 && listaMaterie.length <=3) { <p> ci sono {{listaMaterie.length}} materie </p>}
+    @else if(listaMaterie.length > 3) {<p> ci sono {{listaMaterie.length}} materie e sono un bel po! </p>}
+    @else {<p>non ci sono materie!</p> }
+
+
+
+    <!-- Versione legacy vecchia -->
+    <!-- <h2 style="margin-top: 150px;">versione legacy</h2> -->
+
+    <!-- la versione legacy a paritre da Angluar 15 ha bisogno di essere imporata nel component.ts
+ nelle versioni precedentri non va importata ma non esistono @for() @if()
+* BISOGNA IMPORTARE NGFOR + NGIF nel component negli imports[] -->
+    <!-- <ul>
+        <li *ngFor="let docente of listaDocenti">
+            <span *ngIf="docente.disponibilita">
+                il docente di nome: {{docente.nome}} è disponibile
+            </span>
+        </li>
+    </ul> -->
+
+    <hr>
+
+    <h2 style="margin-top: 150px;">Responsabile Corso</h2>
+
+    <!--* [respo]="respo" è il mnome dell'input che riceve l'array dei respo
+    sto replicando il componet tanti quanti responsabili ci sono nell'array! e passo l'inforamzione di respo al figlio RESPONSABILE 
+     e otteniamo l'evento dal figlio all'interno di LEZ4-STATEMENT-->
+    <div class="box">
+        @for(respo of listaResponsabili; track respo.id ){
+        <app-responsabile [respo]="respo" (selectRespo)="onSelectedRespo($event)"></app-responsabile>
+        }
+    </div>
+
+    <!-- *2. Componente `app-corsi` -->
+    <app-corsi [respoScelto]="respoScelta"></app-corsi>

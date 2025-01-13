@@ -1,0 +1,19 @@
+<div class="boxRespo">
+
+    <h4> {{respo.nome}} {{respo.cognome}}</h4>
+
+    <!-- andiamo a creare una lista dei corsi dai CORSI DEL RESPONSABILE -->
+    <p style="font-weight: bold;">lista dei corsi</p>
+
+    <ul>
+        @for (corso of respo.corsi; track $index) {
+        <li>{{corso}}</li>
+        }
+    </ul>
+
+    <!-- UPGRADE DA FARE:
+    al click di questo pulsante mostrare in un altro component la disponibilità del docente 
+    se i corsi sono >= 4 il docente non ha piuù disponibilità per inserire corsi.
+    il component deve essere rendirizzato solo quando faccio click sul pulsante sottostante -->
+    <button (click)="onSelectedRespo()">Mostra disponibilita</button>
+</div>

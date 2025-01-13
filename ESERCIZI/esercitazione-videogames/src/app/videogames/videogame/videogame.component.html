@@ -1,0 +1,21 @@
+<div class="box bg-light">
+
+    <!-- mettiamo in pagina le props del videogioco passato (forEach) -->
+    <h2>{{videogame.titolo}}</h2>
+    <img [src]="videogame.immagineCopertina" alt="immagine videogame">
+    <h3>{{videogame.genere}} || {{videogame.dataDiRilascio}}</h3>
+    <p>{{videogame.descrizione}}</p>
+
+
+    <!-- check dello stato, se non è disponibile apparià un bottone che permette di prenotarlo -->
+    @if(!videogame.statoDisponibilita){
+
+    <!-- pulsante per selezionare il videogioco e passarlo al genitore "videogames.component", andrà ad aprire la modale di prenotazione  -->
+    <button type="button" class="px-4 btn btn-warning" data-bs-toggle="modal" data-bs-target="#prenotaVideogioco"
+        (click)="onVideogameSelected()">
+        Prenota ora!
+    </button>
+    } @else {
+    <h3 class="text-success">già nella tua libreria!</h3>
+    }
+</div>

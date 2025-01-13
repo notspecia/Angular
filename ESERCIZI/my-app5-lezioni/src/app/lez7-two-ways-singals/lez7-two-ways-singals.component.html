@@ -1,0 +1,34 @@
+<div class="box">
+    <h2>Two way data binding</h2>
+
+    <form action="">
+
+        <p>
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" [(ngModel)]="nome">
+        </p>
+
+        <p>
+            <label for="cognome">Cognome</label>
+            <input type="text" name="cognome" id="cognome" [(ngModel)]="cognome">
+        </p>
+
+        <p>
+            <label for="dataNascita">Data di nascita</label>
+            <input type="date" id="dataNascita" name="dataNascita" [(ngModel)]="dataNascita">
+        </p>
+
+        <button type="submit" (click)="onSubmitForm()">Registra</button>
+
+        <!-- al click va inserire nei form di default tramite la funzione onEsempio() -->
+        <button (click)="onEsempio()">Inserisci dati Esempio</button>
+
+        <!--* mostriamo i dati compilati nel form mentre si scrivono grazie al sitema del two way data binding TRAMITE I SIGNAL() -->
+        <span>
+            update continuo dei miei dati!
+            {{nome()}} {{cognome()}} {{dataNascita()}}
+        </span>
+
+
+    </form>
+</div>

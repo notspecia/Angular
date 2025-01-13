@@ -1,0 +1,32 @@
+<h1 class="txtRed">Mia App</h1>
+<h3>sono un sottotitolo modificato dal css globale scritto dal app.component</h3>
+
+<div class="box">
+    <!-- il selettore del componente nel template: Nel file app.component.html -->
+    <app-primo></app-primo>
+</div>
+
+<!-- stiamo richiamando + volte lo stesso COMPONENT -->
+<app-primo></app-primo>
+<app-primo></app-primo>
+<app-primo></app-primo>
+
+<!-- voglio rendirizzare il SECONDO COMPONENT -->
+<app-secondo></app-secondo>
+
+
+<hr>
+
+<!-- component UTENTI (plurale) -->
+<h1>Utenti</h1>
+<app-utenti></app-utenti>
+<hr style="margin-bottom: 70px ;">
+<!-- component UTENTE (singolare) -->
+<h2>Utente</h2>
+<app-utente></app-utente>
+
+
+<!-- esercizio strobo component apposito -->
+<app-esercizio-strobo></app-esercizio-strobo>
+
+<router-outlet />

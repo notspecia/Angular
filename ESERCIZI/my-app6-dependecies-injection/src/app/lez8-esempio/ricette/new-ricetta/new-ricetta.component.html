@@ -1,0 +1,44 @@
+<!-- bottone che permette di aprire una modale con un form di compilazione per aggiungere una nuova task
+ all'array `tasksUtente` -->
+<button type="button" class="p-3 btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#addRicetta">
+    Aggiungi Ricetta
+</button>
+
+
+<!-- modale che si apre che permette di aggiungere una nuova task a quelle dell'utente -->
+<div class="modal fade" id="addRicetta" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="infoModalLabel">Aggiungi una ricetta!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form (submit)="onSubmitRicetta()">
+
+                    <p>
+                        <label for="nome">Nome Ricetta</label>
+                        <input type="text" id="nome" class="form-control" name="nome" [(ngModel)]="nome">
+                    </p>
+
+                    <p>
+                        <label for="descrizione">Descrizione Ricetta</label>
+                        <textarea name="descrizione" id="descrizione" class="form-control" name="descrizione"
+                            [(ngModel)]="descrizione"></textarea>
+                    </p>
+
+                    <!-- aggiungiamo evento al bottone al click evoca onSubmitForm() -->
+                    <button type="submit" class="btn btn-success">Aggiungi ricetta</button>
+
+
+                    <!-- evocato in caso non venisse inserito le info nei form -->
+                    <div class="text-danger">{{alert}}</div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<h1>Signals</h1>
+
+<!-- importiamo e utilizziamo il component figlio -->
+<app-intro></app-intro>
+
+<hr>
+
+
+<!-- andiamo ad iterare i responsabili ottenuti dal DB (array di responsabili) -->
+@for (respo of responsabili; track $index) {
+
+<!--* importiamo gli input dentro il componente rendirizzandoli qui dentro -->
+<app-user [nome]="respo.nome" [cognome]="respo.cognome" [imageAvatar]="respo.image" (select)="onSelectedRespo($event)">
+</app-user>
+}

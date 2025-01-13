@@ -1,0 +1,39 @@
+<!--* STEP 01. permettere ad angular di capire come trattare questo form
+usero una local reference #form = "ngModel" che è uno special identifier
+dopodichè passo al metodo onSubmit() IL MIO FORM INTERO!
+la prima cosa si fa è dare una referenza al Form "NgForm", ora lo sto vedendo come un form che è gestito da angular  -->
+<form #form="ngForm" style="width: 50%; margin: 100px auto 0;" (ngSubmit)="onSubmit(form)">
+
+    <h2 style="text-align: center;">Login</h2>
+
+    <!-- attributo -> email: è un validator che controlla in automatico angular che il campo sia rispettato -->
+    <div>
+        <label for="email">Email adress</label>
+        <input type="email" name="email" id="email" #email="ngModel" ngModel email required>
+    </div>
+
+    <div>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" minlength="6" #password="ngModel" ngModel required>
+    </div>
+
+    <button>Login</button>
+
+</form>
+
+
+
+<!-- ATTENZIONE: data la local reference ho a disposizione il mio oggetto con tutte le sue proprietà!
+ prima di essere rendirizzato usare anche il touched se il form è stato modificato -->
+@if (form.form.invalid && form.form.touched ) {
+<p style="color: red;">Valori INVALIDI!</p>
+}
+
+
+<!-- @if(email.touched && email.dirty && email.invalid){
+<p class="control-error">Email non valida</p>
+}
+
+@if(password.touched && password.dirty && password.invalid){
+<p class="control-error">Password non valida</p>
+} -->

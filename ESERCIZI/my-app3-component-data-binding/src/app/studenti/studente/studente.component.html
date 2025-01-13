@@ -1,0 +1,16 @@
+<!--* Questo template appartiene al componente FIGLIO (`StudenteComponent`). -->
+<!--* I dati qui mostrati (id, nome, cognome, immagine) vengono forniti dal componente PADRE tramite @Input. -->
+
+<p>
+    <!-- Mostra i dati dello studente ricevuti tramite le proprietà @Input -->
+    {{id}} || {{nome}} || {{cognome}}
+
+    <!-- Visualizza l'immagine dello studente -->
+    <img [src]="immagine" alt="immagine studente">
+
+    <!-- Genera e mostra la matricola calcolata dinamicamente -->
+    || Matricola: {{generaMatricola}} ||
+
+    <!-- Pulsante che invia un evento al componente padre (@Output) quando cliccato -->
+    <button (click)="onSelectedStud()">info</button>
+</p>

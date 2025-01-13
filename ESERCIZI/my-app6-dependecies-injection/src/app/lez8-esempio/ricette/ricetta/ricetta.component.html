@@ -1,0 +1,23 @@
+<div class="mb-5 p-3 border border-dark">
+
+    <h3>{{ ricetta.nome }}</h3>
+    <p>{{ ricetta.descrizione }}</p>
+
+    <strong>Ingredienti:</strong>
+    <ul>
+        @for (ingrediente of ricetta.ingredienti; track $index) {
+        <li>
+            {{ingrediente.nome}}
+            {{ingrediente.quantita}}
+            @if (!ingrediente.disponibilita) {
+            <span style="color: red;">non disponibile!</span>
+            } @else {
+            <span style="color: green;"> disponibile!</span>
+            }
+        </li>
+        }
+    </ul>
+
+    <button (click)="onDeleteRicetta()" class="btn btn-danger">Cancella ricetta!</button>
+
+</div>

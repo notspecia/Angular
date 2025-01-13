@@ -1,0 +1,8 @@
+<div style="border: 2px solid black; margin-bottom: 40px;">
+    <p>Nome: {{utente().firstname}}</p>
+    <p>Cognome: {{utente().lastname}}</p>
+    <p>Eta: {{utente().age}}</p>
+    <p>Email: {{utente().email}}</p>
+    <img src="{{utente().image}}" alt="foto utente">
+    <button (click)="onSelectedUser(utente())">AGGIUNGI AI PREFERITI</button>
+</div>

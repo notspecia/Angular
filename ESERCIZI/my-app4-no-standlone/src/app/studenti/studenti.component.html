@@ -1,0 +1,8 @@
+<p>studenti works!</p>
+
+<button (click)="onCaricaStudenti()">Carica studenti!</button>
+
+<h2>lista degli studenti:</h2>
+@for (s of studenti; track $index) {
+<li>{{s}}</li>
+}
