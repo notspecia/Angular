@@ -1,0 +1,9 @@
+@for (u of utenti; track $index) {
+<app-utente [utente]="u"></app-utente>
+}
+
+
+<!-- dentro questo component routerOutlet rendirizzando le info di ogni studente -->
+<div class="mt-5">
+    <router-outlet></router-outlet>
+</div>

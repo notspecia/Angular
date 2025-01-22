@@ -153,6 +153,20 @@
       "lastname": "Bianchi",
       "email": "laura.bianchi@mail.com",
       "image": "http://localhost:3000/images/f3.jpg"
+    },
+    {
+      "id": "2",
+      "firstname": "Marco",
+      "lastname": "Gialli",
+      "email": "marco.gialli@mail.com",
+      "image": "http://localhost:3000/images/f2.jpg"
+    },
+    {
+      "id": "4",
+      "firstname": "Luca",
+      "lastname": "Gialli",
+      "email": "luca.gialli@mail.com",
+      "image": "http://localhost:3000/images/f4.jpg"
     }
   ],
   "autore": {

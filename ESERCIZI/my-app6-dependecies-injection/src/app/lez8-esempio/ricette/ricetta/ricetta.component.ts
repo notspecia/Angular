@@ -16,13 +16,12 @@ import { RicetteService } from '../ricette.service';
 
 export class RicettaComponent {
 
-  // L'INPUT NON LO DIMENTICHEREMO MAI ANDRA SEMPRE USATO (al massimo possiamo scordarci dell' @Output)
-  @Input() ricetta!: Ricetta;
-
-
   // *** inietta il servizio RicetteService serve per accedere ai metodi del servizio *** 
   constructor(private ricetteService: RicetteService) { }
 
+
+  // L'INPUT NON LO DIMENTICHEREMO MAI ANDRA SEMPRE USATO (al massimo possiamo scordarci dell' @Output)
+  @Input() ricetta!: Ricetta;
 
   // non si farà + @Output e event emitter per poi passarlo al genitore!!! ma piuttosto tramite i services cosi:
   onDeleteRicetta() {

@@ -39,7 +39,7 @@ Il comando `tsc .\intro.ts` serve a compilare un file TypeScript chiamato intro.
 
 automaticamente l'applicazione nel browser predefinito, puntando all'indirizzo:
 ## da fixare a casa
-capire meglio la classe dentro component nel progetto angualar e come funzionano i files e come vengono gestiti
+capire meglio la classe dentro component nel progetto angular e come funzionano i files e di come vengono gestiti
 
 
 <br><br><br><br>
@@ -516,7 +516,7 @@ private parentiService = inject(ParentiService);
 L'uso dei **services** e della **dependency injection** permette di organizzare il codice in modo pulito, modulare e manutenibile. Questo approccio è essenziale per applicazioni di grandi dimensioni o con una gerarchia complessa di componenti, riducendo il rischio di accoppiamento e migliorando la riutilizzabilità del codice.
 ![Grafico spiegazione dependecy injection](./IMG/image.png)
 
-
+  
 - `ng g s` -> comando per generare un services all'interno di un componente specifico
 
 
@@ -597,7 +597,7 @@ installazione di una libereria che permette di avere un mini server backend in l
 
 entrare nella cartella apposita con il file con json delle documentazione e runnarlo
 si potra vedere nel terminale che abbiamo un index contente le varie rotte, possiamo aggiungere anche dei dati e verrano mostrati e aggiornati in pagina index!:
-```json
+```json 
  "students": {
         "nome": "Gabriele",
         "cognome": "Speciale",
@@ -618,3 +618,14 @@ implementazione ed esempio con commenti dentro `myapp7-http`
 la parte delle chiamate HTTP fatte nei vari component in maniera disordinata è tutta commentata anche se prima funzionava
 ### dopo intervallo
 abbiamo creao un .service.ts dentro utenti (padre di tutti), per gestire le varie chiamate HTTP delle API passando il loro path in maniera dinamica
+
+
+
+
+<br><br><br><br>
+
+
+
+
+# LEZ 15
+ripasso dell'http servecies e introduzione al routing su angultar

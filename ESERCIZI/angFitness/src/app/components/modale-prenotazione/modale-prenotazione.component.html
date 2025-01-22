@@ -1,0 +1,50 @@
+<!-- modale aperta quando viene cliccato il bottone "prenota corso", all'interno di corso.component.html -->
+
+@if(corso()){
+<div class="modal fade" id="prenotazioneModal" tabindex="-1" aria-labelledby="prenotazioneModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="prenotazioneModalLabel">Prenotazione Corso {{corso()?.nome}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <!-- form per prenotazione -->
+                <form (ngSubmit)="onSubmit()" [formGroup]="form">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="nome" [formControl]="form.controls.nome"
+                            required="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="cognome" class="form-label">Cognome</label>
+                        <input type="text" class="form-control" id="cognome" [formControl]="form.controls.cognome"
+                            required="" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" [formControl]="form.controls.email"
+                            required="" />
+                    </div>
+
+                    @if(isNotNomeValid){
+                    <p>Nome non valido</p>
+                    } @if(isNotCognomeValid){
+                    <p>Cognome non valido</p>
+                    } @if(isNotEmailValid){
+                    <p>Email non valida</p>
+                    }
+
+                    <button type="button" class="btn btn-outline-danger me-3" data-bs-dismiss="modal">Chiudi</button>
+                    <button type="submit" class="btn btn-success" [disabled]="!isFormValid"
+                        data-bs-dismiss="modal">Conferma
+                        Prenotazione</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+}

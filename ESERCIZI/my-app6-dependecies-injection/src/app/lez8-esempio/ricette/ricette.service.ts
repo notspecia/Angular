@@ -26,19 +26,16 @@ export class RicetteService {
     return this.listaRicette;
   }
 
+  // *** va ad aggiornare la lista array, delle ricette totali aggiungendo la ricetta passata come parametro al service
+  addRicetta(ricetta: Ricetta) {
+    this.listaRicette.push(ricetta);
+    console.log(`ricetta aggiunta con successo!: ${ricetta}`);
+  }
 
   // *** mi faccio restituire l'array nuovo senza la ricetta eliminata tramite il (click) all'interno del figlio "ricetta.component" ***
   removeRicettaById(id: string) {
     this.listaRicette = this.listaRicette.filter(ricetta => ricetta.id !== id);
     console.log('Lista ricette aggiornata:', this.listaRicette);
   }
-
-
-  // *** va ad aggiornare la lista array, delle ricette totali
-  addRicetta(ricetta: Ricetta) {
-    this.listaRicette.push(ricetta);
-    console.log(`ricetta aggiunta con successo!: ${ricetta}`);
-  }
-
 
 }

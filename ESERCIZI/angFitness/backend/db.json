@@ -1,0 +1,114 @@
+{
+  "corsi": [
+    {
+      "id": "1",
+      "nome": "Yoga per Principianti",
+      "descrizione": "Un corso di yoga per migliorare la flessibilità e rilassare la mente. Ideale per principianti.",
+      "istruttore": "Anna Rossi",
+      "durata": 1,
+      "prenotazioniMax": 20,
+      "prenotazioniAttuali": 15,
+      "immagine": "http://localhost:3000/images/c-1.jpg"
+    },
+    {
+      "id": "2",
+      "nome": "CrossFit Avanzato",
+      "descrizione": "Un allenamento intenso per migliorare forza, resistenza e agilità. Per esperti.",
+      "istruttore": "Luca Bianchi",
+      "durata": 2,
+      "prenotazioniMax": 15,
+      "prenotazioniAttuali": 15,
+      "immagine": "http://localhost:3000/images/c-2.jpg"
+    },
+    {
+      "id": "3",
+      "nome": "Pilates",
+      "descrizione": "Allenamento a corpo libero per rafforzare i muscoli posturali e migliorare la flessibilità.",
+      "istruttore": "Maria Verdi",
+      "durata": 2,
+      "prenotazioniMax": 25,
+      "prenotazioniAttuali": 25,
+      "immagine": "http://localhost:3000/images/c-3.jpg"
+    },
+    {
+      "id": "4",
+      "nome": "Functional Training",
+      "descrizione": "Allenamento funzionale adatto a tutti per migliorare la mobilità e la resistenza.",
+      "istruttore": "Marco Neri",
+      "durata": 2,
+      "prenotazioniMax": 20,
+      "prenotazioniAttuali": 20,
+      "immagine": "http://localhost:3000/images/c-4.jpg"
+    },
+    {
+      "id": "5",
+      "nome": "Zumba",
+      "descrizione": "Un mix di danza e fitness per divertirsi e bruciare calorie al ritmo di musica latina.",
+      "istruttore": "Elena Russo",
+      "durata": 1,
+      "prenotazioniMax": 30,
+      "prenotazioniAttuali": 29,
+      "immagine": "http://localhost:3000/images/c-5.jpg"
+    },
+    {
+      "id": "6",
+      "nome": "Spinning",
+      "descrizione": "Allenamento cardio su bici stazionaria, ideale per migliorare la resistenza e bruciare calorie.",
+      "istruttore": "Paolo Ferri",
+      "durata": 2,
+      "prenotazioniMax": 20,
+      "prenotazioniAttuali": 19,
+      "immagine": "http://localhost:3000/images/c-6.jpg"
+    },
+    {
+      "id": "7",
+      "nome": "HIIT (High-Intensity Interval Training)",
+      "descrizione": "Un programma di allenamento a intervalli per migliorare la forma fisica in poco tempo.",
+      "istruttore": "Claudia Marchetti",
+      "durata": 3,
+      "prenotazioniMax": 15,
+      "prenotazioniAttuali": 12,
+      "immagine": "http://localhost:3000/images/c-7.jpg"
+    },
+    {
+      "id": "8",
+      "nome": "Boxe Fitness",
+      "descrizione": "Un allenamento ispirato alla boxe per migliorare la forza e il cardio, divertendosi.",
+      "istruttore": "Giovanni Esposito",
+      "durata": 2,
+      "prenotazioniMax": 18,
+      "prenotazioniAttuali": 16,
+      "immagine": "http://localhost:3000/images/c-8.jpg"
+    },
+    {
+      "id": "9",
+      "nome": "Stretching Posturale",
+      "descrizione": "Un corso dedicato al miglioramento della postura e alla prevenzione dei dolori muscolari.",
+      "istruttore": "Laura Conti",
+      "durata": 1,
+      "prenotazioniMax": 25,
+      "prenotazioniAttuali": 23,
+      "immagine": "http://localhost:3000/images/c-9.jpg"
+    },
+    {
+      "id": "10",
+      "nome": "Tai Chi",
+      "descrizione": "Un'arte marziale cinese per armonizzare corpo e mente, migliorando l'equilibrio e la concentrazione.",
+      "istruttore": "Stefano Ricci",
+      "durata": 2,
+      "prenotazioniMax": 15,
+      "prenotazioniAttuali": 12,
+      "immagine": "http://localhost:3000/images/c-10.jpg"
+    },
+    {
+      "id": "11",
+      "nome": "Powerlifting",
+      "descrizione": "Un allenamento di forza per migliorare la tecnica e sollevare pesi in modo sicuro.",
+      "istruttore": "Alessandro Moretti",
+      "durata": 3,
+      "prenotazioniMax": 12,
+      "prenotazioniAttuali": 8,
+      "immagine": "http://localhost:3000/images/c-11.jpg"
+    }
+  ]
+}

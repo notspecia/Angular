@@ -1,0 +1,23 @@
+<!-- component della card singola per ogni corso, immagini e i dati inerenti ad esso -->
+<div class="card px-3 py-2" style="width: 20rem;">
+    <img src="{{corso().immagine}}" class="card-img-top" alt="immagine corso">
+    <div class="card-body">
+        <h4 class="card-title">{{corso().nome}}</h4>
+        <p class="card-text">{{corso().descrizione}}</p>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Istruttore: {{corso().istruttore}}</li>
+            <li class="list-group-item">Durata: {{corso().durata}} ora</li>
+            <li class="list-group-item">Prenotazioni max: {{corso().prenotazioniMax}}</li>
+            <li class="list-group-item">Prenotazioni attuali: {{corso().prenotazioniAttuali}}</li>
+        </ul>
+
+        <!-- check se il corso ha raggiunto il numero di prenotazioni max andrà disabilitato -->
+        @if (corso().prenotazioniAttuali === corso().prenotazioniMax) {
+        <button class="btn btn-secondary mt-3" disabled>Corso pieno!</button>
+        } @else {
+        <!-- TO DO FIX BUG cliccare 2 volte prima che si apra -->
+        <button class="btn btn-success mt-3" (click)="handleBooking(corso())" data-bs-toggle="modal"
+            data-bs-target="#prenotazioneModal">Prenota corso!</button>
+        }
+    </div>
+</div>
