@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { CorsiService } from '../../corsi.service';
 
 import { CorsoComponent } from "../../components/corso/corso.component";
-import { type Corso } from '../../corso.model';
+import { type Corso } from '../../components/corso/corso.model';
 import { ModalePrenotazioneComponent } from "../../components/modale-prenotazione/modale-prenotazione.component";
 import { RouterLink } from '@angular/router';
 
@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
 
   // ---------------------------------------------
 
-  // variabile che conterrà il corso selezionato tramite event emitter dal componente figlio corso.component
+  // variabile che conterrà il corso selezionato tramite event emitter dal componente figlio "corso.component"
   selectedCorso = signal<null | Corso>(null);
 
   handleBooking(corso: Corso) {

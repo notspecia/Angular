@@ -1,6 +1,6 @@
 import { Component, inject, input } from '@angular/core';
 import { CorsiService } from '../../corsi.service';
-import { type Corso } from '../../corso.model';
+import { type Corso } from '../corso/corso.model';
 
 
 

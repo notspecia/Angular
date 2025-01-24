@@ -1,10 +1,10 @@
 export interface Corso {
-    id: string,
+    id?: string,
     nome: string,
     descrizione: string,
+    immagine: string
     istruttore: string,
     durata: number,
     prenotazioniMax: number,
     prenotazioniAttuali: number,
-    immagine: string
 }

@@ -1,6 +1,7 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Corso } from './corso.model';
+import { Corso } from './components/corso/corso.model';
+import { ReportPrenotazione } from './components/report-prenotazioni/report-prenotazione.model';
 
 
 
@@ -15,6 +16,8 @@ export class CorsiService {
   //*** inject di metodi HTTP per gestire i corsi (GET, PATCH, DELETE, POST) ***
   private httpClient = inject(HttpClient);
 
+
+  //*** METODI API corsi/ *** 
 
   // metodo invocato nei component per effettuare la GET dei corsi da usare nelle pagine "home" && "nostri-corsi"
   loadCorsi() {
@@ -48,7 +51,21 @@ export class CorsiService {
 
   // metodo per creare un corso passato tramite la mdoale di creazione nel componente "modale-creazione.component"
   createCorso(corso: Corso) {
+    return this.httpClient.post<Corso>(`http://localhost:3000/corsi`, corso);
+  }
 
+
+  //*** METODI API report/ *** 
+
+  // metodo GET invocato al montaggio del componente report-prenotazioni.component
+  loadReports() {
+    return this.httpClient.get<ReportPrenotazione[]>("http://localhost:3000/reports");
+  }
+
+  // ------------------------------------------------
+
+  createReport(report: ReportPrenotazione) {
+    return this.httpClient.post<ReportPrenotazione>(`http://localhost:3000/reports`, report);
   }
 
 }

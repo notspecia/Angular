@@ -9,6 +9,15 @@
             <img src="{{corso().immagine}}" class="card-img-top" alt="immagine corso">
         </div>
 
+        <!-- lista delle informazioni del corso della card-->
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Istruttore</strong>: {{corso().istruttore}}</li>
+            <li class="list-group-item"><strong>Durata</strong>: {{corso().durata}} ora</li>
+            <li class="list-group-item"><strong>Prenotazioni max</strong>: {{corso().prenotazioniMax}}</li>
+            <li class="list-group-item"><strong>Prenotazioni attuali</strong>: {{corso().prenotazioniAttuali}}
+            </li>
+        </ul>
+
         <!-- bottone che permette di CANCELLARE il corso presente in questa card per l'amministrazione -->
         <div class="d-flex justify-content-center">
             <button class="btn btn-danger mt-3 mt-3" (click)="handleDelete()">Cancella corso!</button>

@@ -3,6 +3,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { NostriCorsiComponent } from './pages/nostri-corsi/nostri-corsi.component';
 import { ChiSiamoComponent } from './pages/chi-siamo/chi-siamo.component';
 import { AmministrazioneComponent } from './pages/amministrazione/amministrazione.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 // rotte delle pagine dell'applicazione, navigabili attraverso il componente navbar.component
 export const routes: Routes = [
@@ -10,5 +11,5 @@ export const routes: Routes = [
     { path: "nostri-corsi", component: NostriCorsiComponent },
     { path: "chi-siamo", component: ChiSiamoComponent },
     { path: "amministrazione", component: AmministrazioneComponent },
-    { path: "**", component: HomeComponent },
+    { path: "**", component: NotFoundComponent }, // in caso venisse inserita una rotta insesitente alle precedenti!
 ];

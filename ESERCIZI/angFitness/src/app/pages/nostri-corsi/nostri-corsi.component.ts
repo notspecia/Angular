@@ -4,7 +4,7 @@ import { CorsiService } from '../../corsi.service';
 
 import { CorsoComponent } from "../../components/corso/corso.component";
 import { ModalePrenotazioneComponent } from '../../components/modale-prenotazione/modale-prenotazione.component';
-import { type Corso } from '../../corso.model';
+import { type Corso } from '../../components/corso/corso.model';
 
 
 
@@ -21,7 +21,7 @@ import { type Corso } from '../../corso.model';
 
 export class NostriCorsiComponent implements OnInit {
 
-  //*** inject di metodi HTTP e services comuni da utilizzare per gestire i corsi ***
+  //*** inject dei services comuni da utilizzare per gestire i corsi ***
   private corsiServices = inject(CorsiService);
 
   // variabile contenente i corsi ottenuti tramite GET FETCH corsi/

@@ -1,6 +1,6 @@
 import { Component, inject, input, output } from '@angular/core';
-import { type Corso } from '../../corso.model';
 import { CorsiService } from '../../corsi.service';
+import { type Corso } from './corso.model';
 
 
 
@@ -24,13 +24,16 @@ export class CorsoComponent {
 
   // -------------------------------------
 
-  // rispondiamo in output alla pagina padre con un "event" passando il corso selezionato
+  // rispondiamo in output alla pagina padre con un "event($)" passando il corso attuale della card selezionato
   selectCorso = output<Corso>();
 
   handleBooking(selectCorso: Corso) {
     this.selectCorso.emit(this.corso());
   }
 
+  // -------------------------------------
+
+  // metodo che effettua una chiamata PATCH ai service passando il corso di questo componente decrementando la proprietà "prenotazioniAttuali"
   handleDecrement() {
     this.corsiServices.decrementBooking(this.corso())
       .subscribe({
@@ -42,6 +45,5 @@ export class CorsoComponent {
         }
       });
   }
-
 
 }

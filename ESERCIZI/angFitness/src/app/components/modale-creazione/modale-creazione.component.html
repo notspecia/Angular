@@ -1,5 +1,11 @@
-<!-- modale aperta quando viene cliccato il bottone "crea corso" -->
+<!-- bottone per fare una POST che permetta di aprire la modale per la creazione di un nuovo corso -->
+<div class="d-flex justify-content-center mt-5">
+    <button class="apriModal btn btn-success fs-5" data-bs-toggle="modal" data-bs-target="#creazioneModal">Crea
+        nuovo corso</button>
+</div>
 
+
+<!-- modale aperta quando viene cliccato il bottone "crea corso", contiene il form con gli input rispettivi per la creazione di un nuovo corso -->
 <div class="modal fade" id="creazioneModal" tabindex="-1" aria-labelledby="creazioneModal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -9,12 +15,67 @@
                 </h4>
             </div>
             <div class="modal-body">
+                <!-- form per la creazione del corso, validazione dei dati e del form tramite #form = "ngModel"
+                il form verrà verificato tramite il metodo onSubmit() passando l'oggetto del form-->
+                <form #formData="ngForm" (ngSubmit)="onSubmit(formData)">
 
-                <p>ciao da mettere il form per la creazione di modale</p>
+                    <!-- input per il nome del corso -->
+                    <div class="mb-3">
+                        <label for="nomeCorso" class="form-label">Nome corso</label>
+                        <input type="text" class="form-control" id="nomeCorso" name="nomeCorso" #nomeCorso="ngModel"
+                            ngModel required />
+                    </div>
+
+                    <!-- input per la descrizione del corso -->
+                    <div class="mb-3">
+                        <label for="descrizioneCorso" class="form-label">Descrizione corso</label>
+                        <input type="text" class="form-control" id="descrizioneCorso" name="descrizioneCorso"
+                            #descrizioneCorso="ngModel" ngModel required />
+                    </div>
+
+                    <!-- input per inserire link dell'immagine del corso -->
+                    <div class="mb-3">
+                        <label for="immagine" class="form-label">Link immagine</label>
+                        <input type="immagine" class="form-control" id="immagine" name="immagine" #immagine="ngModel"
+                            ngModel required>
+                    </div>
+
+                    <!-- input per il nome delll'istruttore del corso -->
+                    <div class="mb-3">
+                        <label for="istruttore" class="form-label">Istruttore</label>
+                        <input type="text" class="form-control" id="istruttore" name="istruttore" #istruttore="ngModel"
+                            ngModel required />
+                    </div>
+
+                    <!-- input per la durata del corso (ore) -->
+                    <div class="mb-3">
+                        <label for="durata" class="form-label">Durata</label>
+                        <input type="number" class="form-control" id="durata" name="durata" #durata="ngModel" ngModel
+                            required />
+                    </div>
+
+                    <!-- input per il numero massimo di prenotazioni che può tenere il corso
+                    ATT: le prenotazioni attuali sono settate in automatico a 0! dato che il corso è nuovo -->
+                    <div class="mb-3">
+                        <label for="prenotazioniMax" class="form-label">Prenotazioni massime</label>
+                        <input type="number" class="form-control" id="prenotazioniMax" name="prenotazioniMax"
+                            #prenotazioniMax="ngModel" ngModel required />
+                    </div>
+
+
+                    <!-- 
+                    bottoni per confermare o cancellare la richiesta di creazione (chiuderanno al click la modale)
+                    se il form collegamento con angular con ngForm non è valido, allora il bottone prenotazione sarà diabilitato 
+                    -->
+                    <div class="mt-5">
+                        <button type="button" class="btn btn-outline-danger me-3"
+                            data-bs-dismiss="modal">Chiudi</button>
+
+                        <button type="submit" class="btn btn-success" data-bs-dismiss="modal"
+                            [disabled]="formData.invalid">Conferma Creazione</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
-
-<!-- bottone per fare una POST che permetta di aprire la modale per la creazione di un nuovo corso -->
-<button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#creazioneModal">Crea nuovo corso</button>

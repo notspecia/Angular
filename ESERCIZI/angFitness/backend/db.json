@@ -7,17 +7,17 @@
       "istruttore": "Anna Rossi",
       "durata": 1,
       "prenotazioniMax": 20,
-      "prenotazioniAttuali": 8,
+      "prenotazioniAttuali": 9,
       "immagine": "http://localhost:3000/images/c-1.jpg"
     },
     {
       "id": "2",
-      "nome": "CrossFit Avanzato",
-      "descrizione": "Un allenamento intenso per migliorare forza, resistenza e agilità. Per esperti.",
-      "istruttore": "Luca Bianchi",
-      "durata": 2,
-      "prenotazioniMax": 15,
-      "prenotazioniAttuali": 2,
+      "nome": "Crossfit",
+      "descrizione": "Un corpo forte non si costruisce nella zona di comfort. Se sei carina alla fine del WOD… non hai spinto abbastanza. Un corpo incredibile non “succede”. Non è qualcosa con cui nasci.",
+      "istruttore": "Maria Verdi",
+      "durata": 3,
+      "prenotazioniMax": 30,
+      "prenotazioniAttuali": 15,
       "immagine": "http://localhost:3000/images/c-2.jpg"
     },
     {
@@ -27,7 +27,7 @@
       "istruttore": "Maria Verdi",
       "durata": 2,
       "prenotazioniMax": 25,
-      "prenotazioniAttuali": 19,
+      "prenotazioniAttuali": 20,
       "immagine": "http://localhost:3000/images/c-3.jpg"
     },
     {
@@ -37,7 +37,7 @@
       "istruttore": "Marco Neri",
       "durata": 2,
       "prenotazioniMax": 20,
-      "prenotazioniAttuali": 17,
+      "prenotazioniAttuali": 18,
       "immagine": "http://localhost:3000/images/c-4.jpg"
     },
     {
@@ -47,7 +47,7 @@
       "istruttore": "Elena Russo",
       "durata": 1,
       "prenotazioniMax": 30,
-      "prenotazioniAttuali": 24,
+      "prenotazioniAttuali": 23,
       "immagine": "http://localhost:3000/images/c-5.jpg"
     },
     {
@@ -77,7 +77,7 @@
       "istruttore": "Giovanni Esposito",
       "durata": 2,
       "prenotazioniMax": 18,
-      "prenotazioniAttuali": 16,
+      "prenotazioniAttuali": 17,
       "immagine": "http://localhost:3000/images/c-8.jpg"
     },
     {
@@ -109,6 +109,108 @@
       "prenotazioniMax": 12,
       "prenotazioniAttuali": 7,
       "immagine": "http://localhost:3000/images/c-11.jpg"
+    },
+    {
+      "id": "2b4c",
+      "nome": "Pilates",
+      "descrizione": "fdsgdhfgrtfd",
+      "istruttore": "Michele Romano",
+      "durata": 12,
+      "prenotazioniMax": 2343421,
+      "prenotazioniAttuali": 0,
+      "immagine": "https://www.my-personaltrainer.it/2020/04/22/pilates_900x760.jpeg"
+    },
+    {
+      "id": "8af1",
+      "nome": "Zumbaaa",
+      "descrizione": "lorem l lorem llorem llorem llorem llorem llorem l lorem l lorem l",
+      "istruttore": "Michele Romano",
+      "durata": 5,
+      "prenotazioniMax": 12,
+      "prenotazioniAttuali": 1,
+      "immagine": "https://www.fitnessvianello.it/wp-content/uploads/2019/08/pilates.jpg"
+    },
+    {
+      "id": "e041",
+      "nome": "Nuoto",
+      "descrizione": "nuota nuota velocissimo",
+      "istruttore": "Luca Giaccone",
+      "durata": 3,
+      "prenotazioniMax": 20,
+      "prenotazioniAttuali": 2,
+      "immagine": "https://media.gettyimages.com/id/1407932503/it/foto/view-from-above-of-woman-swimming-by-track-in-the-pool-sports-concept-unrecognizable-person.jpg?s=612x612&w=0&k=20&c=QNnlEHpvsq29a8SoETauipfuXzwmeEI10RtuZlEUYG0="
+    }
+  ],
+  "reports": [
+    {
+      "id": "0",
+      "nomeUtente": "Gabriele",
+      "cognomeUtente": "Speciale",
+      "emailUtente": "gabriele.speciale@example.com",
+      "nomeCorso": "Pilates"
+    },
+    {
+      "id": "1",
+      "nomeUtente": "Luca",
+      "cognomeUtente": "Marino",
+      "emailUtente": "luca.marino@example.com",
+      "nomeCorso": "Boxe fitness"
+    },
+    {
+      "id": "43d3",
+      "nomeUtente": "fs",
+      "cognomeUtente": "sfsd",
+      "emailUtente": "fs.sfsd@example.com",
+      "nomeCorso": "Functional Training"
+    },
+    {
+      "id": "ab45",
+      "nomeUtente": "Luca",
+      "cognomeUtente": "Zainetto",
+      "emailUtente": "luca.zainetto@example.com",
+      "nomeCorso": "Crossfit"
+    },
+    {
+      "id": "bf8c",
+      "nomeUtente": "gabriele",
+      "cognomeUtente": "Speciale",
+      "emailUtente": "mimimimmi@fdjd",
+      "nomeCorso": "Crossfit"
+    },
+    {
+      "id": "bb7b",
+      "nomeUtente": "gabriele",
+      "cognomeUtente": "Speciale",
+      "emailUtente": "mimimimmi@fdjd",
+      "nomeCorso": "Crossfit"
+    },
+    {
+      "id": "c8dc",
+      "nomeUtente": "marco",
+      "cognomeUtente": "rtottani",
+      "emailUtente": "ziopera@gmail.com",
+      "nomeCorso": "Zumbaaa"
+    },
+    {
+      "id": "1a4d",
+      "nomeUtente": "ziopera",
+      "cognomeUtente": "ciaoneciaone",
+      "emailUtente": "gabspec@gmail.com",
+      "nomeCorso": "Boxe Fitness"
+    },
+    {
+      "id": "1584",
+      "nomeUtente": "fsd",
+      "cognomeUtente": "fsdfsd",
+      "emailUtente": "fdsfdsfsfsfds@fsdfsd",
+      "nomeCorso": "Nuoto"
+    },
+    {
+      "id": "edd9",
+      "nomeUtente": "fsd",
+      "cognomeUtente": "fsdfsd",
+      "emailUtente": "fdsfdsfsfsfds@fsdfsd",
+      "nomeCorso": "Nuoto"
     }
   ]
 }

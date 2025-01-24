@@ -1,10 +1,20 @@
+<h1 class="display-5 fw-bold text-white text-center mb-4">Ultime 4 prenotazioni</h1>
+<app-report-prenotazioni></app-report-prenotazioni>
+
+
+
 <h1 class="display-5 fw-bold text-white text-center">Gestisci i tuoi corsi</h1>
+
+<!-- componente che contiene il bottone e la modale associata ad esso per la creazione di un nuovo corso POST API -->
+<app-modale-creazione></app-modale-creazione>
 
 <!-- se il booleano isFetching è ancora true, vuol dire che la pagina non ha ancora concluso la chiamata GET -->
 @if(isFetching()){
 <p class="text-white">caricamento in corso...</p>
 
 }@else{
+
+<!-- creazione di un container che conterrà le card dei vari corsi() per poter gestire la cancellazione di essi -->
 <div class="container-fluid mt-5">
 
     <div class="row">
@@ -18,6 +28,3 @@
 </div>
 
 }
-
-<!-- componente che contiene il bottone e la modale associata ad esso per la creazione di un nuovo corso POST API -->
-<app-modale-creazione></app-modale-creazione>

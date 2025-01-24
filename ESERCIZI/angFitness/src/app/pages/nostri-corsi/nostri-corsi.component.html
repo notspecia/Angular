@@ -5,6 +5,8 @@
 <p class="text-white">caricamento in corso...</p>
 
 }@else{
+
+<!-- creazione di un container che conterrà le card dei vari corsi() -->
 <div class="container-fluid">
 
     <div class="row">
@@ -17,6 +19,7 @@
 
 </div>
 
+<!-- se il corso è selezionato dal figlio, allora verrà mostrata la modale per la prenotazione del "selectedCorso" -->
 @if(selectedCorso()){
 <app-modale-prenotazione [corso]="selectedCorso()"></app-modale-prenotazione>
 }
