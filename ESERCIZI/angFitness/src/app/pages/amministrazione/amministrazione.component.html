@@ -1,1 +1,23 @@
-<p>amministrazione works!</p>
+<h1 class="display-5 fw-bold text-white text-center">Gestisci i tuoi corsi</h1>
+
+<!-- se il booleano isFetching è ancora true, vuol dire che la pagina non ha ancora concluso la chiamata GET -->
+@if(isFetching()){
+<p class="text-white">caricamento in corso...</p>
+
+}@else{
+<div class="container-fluid mt-5">
+
+    <div class="row">
+        @for (c of corsi() ?? []; track c.id) {
+        <div class="col-md-4 mb-4 d-flex justify-content-center">
+            <app-corso-amministrazione [corso]="c"></app-corso-amministrazione>
+        </div>
+        }
+    </div>
+
+</div>
+
+}
+
+<!-- componente che contiene il bottone e la modale associata ad esso per la creazione di un nuovo corso POST API -->
+<app-modale-creazione></app-modale-creazione>

@@ -1,15 +1,16 @@
-import { Component, inject, input, OnInit, signal } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, inject, input } from '@angular/core';
+import { FormsModule, NgForm, } from '@angular/forms';
 
-import { type Corso } from '../../corso.model';
 import { CorsiService } from '../../corsi.service';
+import { type Corso } from '../../corso.model';
+
 
 
 
 @Component({
   selector: 'app-modale-prenotazione',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [FormsModule],
   templateUrl: './modale-prenotazione.component.html',
   styleUrl: './modale-prenotazione.component.css',
 })
@@ -18,62 +19,40 @@ import { CorsiService } from '../../corsi.service';
 
 export class ModalePrenotazioneComponent {
 
-  //*** inject di metodi HTTP e services comuni da utilizzare per gestire i corsi ***
+  //*** inject dei services comuni da utilizzare per gestire i corsi ***
   private corsiServices = inject(CorsiService);
-
 
   // prendiamo tramite props in input il corso passato dal componente corso.component e salvato come SIGNAL
   corso = input.required<null | Corso>();
 
 
-  // form component
-  form = new FormGroup({
-    nome: new FormControl('', {
-      validators: [Validators.required],
-    }),
-    cognome: new FormControl('', {
-      validators: [Validators.required],
-    }),
-    email: new FormControl('', {
-      validators: [Validators.required, Validators.email],
-    }),
-  });
 
-  get isNotNomeValid() {
-    return this.form.controls.nome.touched && this.form.controls.nome.invalid;
-  }
-  get isNotCognomeValid() {
-    return (
-      this.form.controls.cognome.touched && this.form.controls.cognome.invalid
-    );
-  }
-  get isNotEmailValid() {
-    return this.form.controls.email.touched && this.form.controls.email.invalid;
-  }
-  get isFormValid() {
-    return this.form.valid;
-  }
+  //*** MODO PER LAVORARE CON I FORMS TRAMITE ngModel come direttiva normale, senza definire le referenze
+  // all'invio del form invocato metodo onSubmit()
+  // formData -> è un oggetto che contiene all'interno di .value i campi passati del form
+  onSubmit(formData: NgForm) {
 
+    // leggiamo i dati del form tramite il macro oggetto Form che è stato costruito al submit del form e assegnamo i valori input a delle variabili
+    const nome = formData.value.nome;
+    const cognome = formData.value.cognome;
+    const email = formData.value.email;
 
-  onSubmit() {
-    console.log(this.form);
-    const nome = this.form.value.nome;
-    const cognome = this.form.value.cognome;
-    const email = this.form.value.email;
+    // log di controllo
+    console.log(`fatta prenotazione di ${nome} ${cognome} ${email}`);
 
-    if (nome && cognome && email) {
+    // controllo aggiuntivo oltre al form diretto nell'html, se il form passato è valido
+    if (formData.valid) {
 
       this.corsiServices.updateBooking(this.corso()!)
         .subscribe({
           next: (updatedCorso) => {
-            console.log(`patch effettuata con successo! ${updatedCorso}`);
+            console.log(`put effettuata con successo! ${JSON.stringify(updatedCorso)}`);
           },
           error: (err) => {
-            console.error(`Errore durante aggiornamento delle prenotazioni: ${err}`);
+            console.error(`Errore durante aggiornamento delle prenotazioni del corso: ${err}`);
           }
         });
     }
-
-
   }
+
 }

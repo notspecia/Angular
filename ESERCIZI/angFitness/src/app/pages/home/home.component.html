@@ -1,20 +1,28 @@
-<h2 class="text-danger mt-5">Home</h2>
+<!-- Hero Section -->
+<div class="hero hero-section text-white text-center py-5 mt-5">
+    <div class="container">
+        <h1 class="display-5 fw-bold">Benvenuti in angFitness!</h1>
+        <p class="lead mt-3">Scopri i nostri corsi e inizia il tuo percorso verso il benessere fisico.</p>
+        <a class="btn btn-primary btn-lg mt-4" routerLink="nostri-corsi">Esplora i corsi</a>
+    </div>
+</div>
 
 <!-- se il booleano isFetching è ancora true, vuol dire che la pagina non ha ancora concluso la chiamata GET -->
 @if(isFetching()){
-<p>Caricamento in corso...</p>
+<p class="text-white">caricamento in corso...</p>
 
 }@else {
 
-<div class="container mt-4">
-    <div class="row">
+<div class="container-fluid mt-4">
 
+    <div class="row">
         @for (c of corsi() ?? []; track c.id) {
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4 d-flex justify-content-center align-items-center">
             <app-corso [corso]="c" (selectCorso)="handleBooking($event)"></app-corso>
         </div>
         }
     </div>
+
 </div>
 
 @if(selectedCorso()){

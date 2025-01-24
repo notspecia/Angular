@@ -22,7 +22,6 @@ import { type Corso } from '../../corso.model';
 export class NostriCorsiComponent implements OnInit {
 
   //*** inject di metodi HTTP e services comuni da utilizzare per gestire i corsi ***
-  private httpClient = inject(HttpClient);
   private corsiServices = inject(CorsiService);
 
   // variabile contenente i corsi ottenuti tramite GET FETCH corsi/

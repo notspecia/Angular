@@ -4,15 +4,15 @@ import { CorsiService } from '../../corsi.service';
 
 import { CorsoComponent } from "../../components/corso/corso.component";
 import { type Corso } from '../../corso.model';
-import { RouterOutlet } from '@angular/router';
 import { ModalePrenotazioneComponent } from "../../components/modale-prenotazione/modale-prenotazione.component";
+import { RouterLink } from '@angular/router';
 
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CorsoComponent, ModalePrenotazioneComponent],
+  imports: [RouterLink, CorsoComponent, ModalePrenotazioneComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -21,8 +21,7 @@ import { ModalePrenotazioneComponent } from "../../components/modale-prenotazion
 
 export class HomeComponent implements OnInit {
 
-  //*** inject di metodi HTTP e services comuni da utilizzare per gestire i corsi ***
-  private httpClient = inject(HttpClient);
+  //*** inject dei services comuni da utilizzare per gestire i corsi ***
   private corsiServices = inject(CorsiService);
 
   // variabile contenente i primo 4 corsi ottenuti tramite GET FETCH corsi/
@@ -48,7 +47,7 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  // --------------------------------------
+  // ---------------------------------------------
 
   // variabile che conterrà il corso selezionato tramite event emitter dal componente figlio corso.component
   selectedCorso = signal<null | Corso>(null);

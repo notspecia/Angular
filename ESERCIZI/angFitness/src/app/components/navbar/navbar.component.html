@@ -1,14 +1,32 @@
-<ul class="nav">
-    <li class="nav-item">
-        <a class="nav-link" routerLink="">Home</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" routerLink="/nostri-corsi">Nostri corsi</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" routerLink="/chi-siamo">Chi siamo</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" routerLink="/amministrazione">Amministrazione</a>
-    </li>
-</ul>
+<nav class="navbar navbar-expand-lg bg-dark fixed-top">
+    <div class="container-fluid">
+        <!-- logo e titolo in alto sinistra della navbar -->
+        <div class="navbar-brand d-flex align-items-center">
+            <img src="https://cdn.pixabay.com/photo/2018/08/23/20/27/gym-3626589_1280.png" alt="Icona palestra"
+                width="70" height="70" class="me-2" />
+            <em class="text-primary fs-1">angFitness</em>
+        </div>
+        <!-- bottone navbar per dispositivi + piccoli per espandere le voci di navigazione per routing delle pagine -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- links di navigazioni delle pagine dell'app tramite routerLink -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto fs-6">
+                <li class="nav-item">
+                    <a class="nav-link text-white active" routerLink="">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" routerLink="/nostri-corsi">Nostri corsi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" routerLink="/chi-siamo">Chi siamo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" routerLink="/amministrazione">Amministrazione</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

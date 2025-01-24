@@ -1,0 +1,18 @@
+h1 {
+    margin-top: 150px;
+}
+
+body {
+    background: linear-gradient(90deg, #191714, #2234AE);
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.team-photo {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}

@@ -1,0 +1,19 @@
+<!-- component della card singola per ogni corso, immagini e i dati inerenti ad esso -->
+<div class="card px-3 py-2 d-flex justify-content-center align-items-center" style="width: 25rem;">
+
+    <div class="card-body">
+        <!-- title descrizione e immagine centrati -->
+        <div class="text-center">
+            <h4 class="card-title">{{corso().nome}}</h4>
+            <p class="card-text">{{corso().descrizione}}</p>
+            <img src="{{corso().immagine}}" class="card-img-top" alt="immagine corso">
+        </div>
+
+        <!-- bottone che permette di CANCELLARE il corso presente in questa card per l'amministrazione -->
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-danger mt-3 mt-3" (click)="handleDelete()">Cancella corso!</button>
+        </div>
+
+    </div>
+
+</div>

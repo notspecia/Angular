@@ -7,7 +7,7 @@
       "istruttore": "Anna Rossi",
       "durata": 1,
       "prenotazioniMax": 20,
-      "prenotazioniAttuali": 15,
+      "prenotazioniAttuali": 8,
       "immagine": "http://localhost:3000/images/c-1.jpg"
     },
     {
@@ -17,7 +17,7 @@
       "istruttore": "Luca Bianchi",
       "durata": 2,
       "prenotazioniMax": 15,
-      "prenotazioniAttuali": 15,
+      "prenotazioniAttuali": 2,
       "immagine": "http://localhost:3000/images/c-2.jpg"
     },
     {
@@ -27,7 +27,7 @@
       "istruttore": "Maria Verdi",
       "durata": 2,
       "prenotazioniMax": 25,
-      "prenotazioniAttuali": 25,
+      "prenotazioniAttuali": 19,
       "immagine": "http://localhost:3000/images/c-3.jpg"
     },
     {
@@ -37,7 +37,7 @@
       "istruttore": "Marco Neri",
       "durata": 2,
       "prenotazioniMax": 20,
-      "prenotazioniAttuali": 20,
+      "prenotazioniAttuali": 17,
       "immagine": "http://localhost:3000/images/c-4.jpg"
     },
     {
@@ -47,7 +47,7 @@
       "istruttore": "Elena Russo",
       "durata": 1,
       "prenotazioniMax": 30,
-      "prenotazioniAttuali": 29,
+      "prenotazioniAttuali": 24,
       "immagine": "http://localhost:3000/images/c-5.jpg"
     },
     {
@@ -57,7 +57,7 @@
       "istruttore": "Paolo Ferri",
       "durata": 2,
       "prenotazioniMax": 20,
-      "prenotazioniAttuali": 19,
+      "prenotazioniAttuali": 18,
       "immagine": "http://localhost:3000/images/c-6.jpg"
     },
     {
@@ -67,7 +67,7 @@
       "istruttore": "Claudia Marchetti",
       "durata": 3,
       "prenotazioniMax": 15,
-      "prenotazioniAttuali": 12,
+      "prenotazioniAttuali": 11,
       "immagine": "http://localhost:3000/images/c-7.jpg"
     },
     {
@@ -87,7 +87,7 @@
       "istruttore": "Laura Conti",
       "durata": 1,
       "prenotazioniMax": 25,
-      "prenotazioniAttuali": 23,
+      "prenotazioniAttuali": 22,
       "immagine": "http://localhost:3000/images/c-9.jpg"
     },
     {
@@ -97,7 +97,7 @@
       "istruttore": "Stefano Ricci",
       "durata": 2,
       "prenotazioniMax": 15,
-      "prenotazioniAttuali": 12,
+      "prenotazioniAttuali": 11,
       "immagine": "http://localhost:3000/images/c-10.jpg"
     },
     {
@@ -107,7 +107,7 @@
       "istruttore": "Alessandro Moretti",
       "durata": 3,
       "prenotazioniMax": 12,
-      "prenotazioniAttuali": 8,
+      "prenotazioniAttuali": 7,
       "immagine": "http://localhost:3000/images/c-11.jpg"
     }
   ]
